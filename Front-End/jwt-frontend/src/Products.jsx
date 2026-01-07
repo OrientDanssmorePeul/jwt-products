@@ -12,8 +12,11 @@ const Products = () => {
   }, []);
 
   useEffect(() => {
-      if (jwtToken == null || jwtToken == "") {
+      if (jwtToken == null) {
           navigate("/");
+      }
+      if(jwtToken == ""){
+        return
       }
       axios
           .get("http://localhost:3000/products", {

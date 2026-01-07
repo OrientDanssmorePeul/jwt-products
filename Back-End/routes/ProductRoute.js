@@ -3,7 +3,7 @@ const Product = require("../models/Product")
 const router = express.Router()
 const jwt = require("jsonwebtoken")
 
-require("dotenv").config
+require("dotenv").config()
 
 function verifyToken(req, res, next) {
     const authHeader = req.headers.authorization;

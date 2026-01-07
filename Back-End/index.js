@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const productRoutes = require("./routes/ProductRoute")
 const userRoutes = require("./routes/UserRoute")
 
+require("dotenv").config()
+
 const app = express()
 app.use(express.json())
 
@@ -21,7 +23,7 @@ app.use(corsHandler)
 mongoose
     .connect('mongodb://localhost:27017/jwt_with_products')
     .then(() => {
-        app.listen(3000, () => {
+        app.listen(process.env.PORT, () => {
             console.log("Express Server Started")
         })
     })

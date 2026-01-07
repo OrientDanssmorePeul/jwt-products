@@ -3,6 +3,7 @@ const Product = require("../models/Product")
 const router = express.Router()
 const jwt = require("jsonwebtoken")
 
+require("dotenv").config
 
 function verifyToken(req, res, next) {
     const authHeader = req.headers.authorization;
@@ -10,7 +11,7 @@ function verifyToken(req, res, next) {
 
     const token = authHeader.split(" ")[1];
 
-    jwt.verify(token, "55a9a79d0c9ec7b03762d5a9e3d67cc700a719d826e4e2f87fcf361ec75e2454", (err, user) => {
+    jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
         if (err) return res.sendStatus(403);
         req.user = user;
         next();

@@ -9,13 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showError, setShowError] = useState(false);
-
+  
   const handleLogin = (e) => {
     e.preventDefault()
     
     if(validation()){
       axios
-        .post("http://localhost:3000/user/login", {email: email, password: password})
+        .post(`${import.meta.env.VITE_API_URL}/user/login`, {email: email, password: password})
         .then((response)=>{
           localStorage.setItem("jwt_token", response.data.token)
           navigate("/products");

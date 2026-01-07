@@ -4,6 +4,7 @@ body{
 
 /* Page background */
 .login-container {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -11,6 +12,11 @@ body{
   align-items: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
   font-family: Arial, sans-serif;
+}
+
+.error-message{
+  position: absolute;
+  top: 0%;
 }
 
 /* Login card */

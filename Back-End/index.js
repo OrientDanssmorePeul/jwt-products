@@ -12,7 +12,7 @@ const cors = require("cors");
 
 const corsHandler = cors({
     origin: "*",
-    methods: "GET, POST, PUT, DELETE",
+    methods: "GET, POST, PUT, DELETE, PATCH",
     allowedHeaders: ["Content-Type", "Authorization"],
     optionsSuccessStatus: 200,
     preflightContinue: false,
@@ -21,7 +21,7 @@ const corsHandler = cors({
 app.use(corsHandler)
 
 mongoose
-    .connect('mongodb://localhost:27017/jwt_with_products')
+    .connect(process.env.MONGODB_URI)
     .then(() => {
         app.listen(process.env.PORT, () => {
             console.log("Express Server Started")

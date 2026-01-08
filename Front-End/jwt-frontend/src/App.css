@@ -78,8 +78,37 @@ body{
 
 /* ==================================================== */
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.content {
+  overflow-y: scroll;
+  background: white;
+  width: 60%;
+  height: 80%;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
 /* Page layout */
 .products-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
   background: linear-gradient(135deg, #667eea, #764ba2);
   min-height: 100vh;
   background: #f4f6fb;

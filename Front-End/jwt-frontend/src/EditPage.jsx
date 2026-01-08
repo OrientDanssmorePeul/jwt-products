@@ -10,16 +10,18 @@ import {
 } from '@mui/material';
 
 const EditProduct = () => {
-
-  const [jwtToken, setJwtToken] = useState("");
-  useEffect(() => {
-      setJwtToken(localStorage.getItem("jwt_token"));
-  }, []);
-
   const navigate = useNavigate();
   const location = useLocation();
 
   const currentProduct = location.state?.productData;
+
+  const [jwtToken, setJwtToken] = useState("");
+  useEffect(() => {
+      setJwtToken(localStorage.getItem("jwt_token"));
+      if(!currentProduct){
+        navigate("/products")
+      }
+  }, []);
 
   const nameRef = useRef();
   const descRef = useRef();

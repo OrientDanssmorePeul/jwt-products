@@ -99,9 +99,13 @@ const Products = ({}) => {
                     product.inStock ? "In Stock" : "Out of Stock"
                   }
                 </span>
-                <div>
-                  <button onClick={()=>openEdit(product._id)} style={{marginTop: "10px"}}>Edit</button>
-                  <button onClick={()=>handleDelete(product._id)} style={{marginTop: "10px", marginLeft: "10px"}}>Delete</button>
+                <div className="button-group">
+                  <button onClick={() => openEdit(product._id)} className="btn-edit">
+                    Edit
+                  </button>
+                  <button onClick={() => handleDelete(product._id)} className="btn-delete">
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>

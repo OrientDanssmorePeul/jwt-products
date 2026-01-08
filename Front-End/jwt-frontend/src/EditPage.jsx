@@ -13,6 +13,7 @@ const EditProduct = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // The "?" prevents app from crashing if user directly type to '/edit-product'   
   const currentProduct = location.state?.productData;
 
   const [jwtToken, setJwtToken] = useState("");
